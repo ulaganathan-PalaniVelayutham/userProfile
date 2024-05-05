@@ -37,7 +37,9 @@ public struct ProfilePage: View {
     }
 
     func submitTapped () {
-
+        print(userName!)
+        print(email!)
+        print(mobile!)
     }
 }
 

@@ -18,8 +18,6 @@ public struct TxtField: View {
         self.txt = txt
     }
 
-    
-
 
     public var body: some View {
         ZStack {

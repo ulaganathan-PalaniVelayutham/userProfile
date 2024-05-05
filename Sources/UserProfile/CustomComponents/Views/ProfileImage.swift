@@ -19,7 +19,7 @@ public struct ProfileImage: View {
     }
 
     public var body: some View {
-        ZStack {
+        VStack {
             Image(img!, bundle: .module)
                 .resizable()
                 .frame(width: size!, height: size!)
