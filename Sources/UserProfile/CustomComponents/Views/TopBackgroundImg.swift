@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TopBackgroundImg: View {
-    var backgroundImage : String!
+    var backgroundImage : String? = "DhoniProfile"
     var body: some View {
         ZStack{
-            Image(backgroundImage, bundle: .module)
+            Image(packageResource: backgroundImage!, ofType: "png")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .blur(radius: 7)

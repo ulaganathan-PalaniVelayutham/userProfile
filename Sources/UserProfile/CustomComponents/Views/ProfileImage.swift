@@ -20,7 +20,7 @@ public struct ProfileImage: View {
 
     public var body: some View {
         VStack {
-            Image(img!, bundle: .module)
+            Image(packageResource: img!, ofType: "png")
                 .resizable()
                 .frame(width: size!, height: size!)
                 .aspectRatio(contentMode: .fit)

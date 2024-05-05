@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct TopView: View {
-    var img : String? = ""
+    var img : String? = "userProfile"
 
     public init(img: String? = "userProfile") {
         self.img = img
@@ -17,7 +17,7 @@ public struct TopView: View {
     public var body: some View {
         GeometryReader(content: { geometry in
             ZStack{
-                TopBackgroundImg(backgroundImage: img)
+                TopBackgroundImg(backgroundImage: img!)
                     .frame(height: geometry.size.height)
                     .ignoresSafeArea()
                 ProfileImage(img: img, size: 100)
