@@ -10,6 +10,12 @@ import SwiftUI
 public struct ProfileFrame: View {
     var lineWidth : CGFloat? = 5.0
     var radius : CGFloat? = 20.0
+
+    public init(lineWidth: CGFloat? = 5.0, radius: CGFloat? = 20.0) {
+        self.lineWidth = lineWidth
+        self.radius = radius
+    }
+
    public var body: some View {
         RoundedRectangle(cornerRadius: radius!)
             .stroke(
