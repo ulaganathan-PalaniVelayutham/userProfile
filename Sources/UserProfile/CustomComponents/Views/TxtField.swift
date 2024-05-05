@@ -8,9 +8,19 @@
 import SwiftUI
 
 public struct TxtField: View {
-    var placeholder: String
+    var placeholder: String? = "placeholder"
     var icon: String? = ""
-    @State var txt : String = ""
+    @State var txt : String
+
+    public init(placeholder: String? = "place holder", icon: String? = "", txt: String) {
+        self.placeholder = placeholder
+        self.icon = icon
+        self.txt = txt
+    }
+
+    
+
+
     public var body: some View {
         ZStack {
             HStack{
@@ -18,7 +28,7 @@ public struct TxtField: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25, height: 25)
-                TextField(placeholder, text: $txt)
+                TextField(placeholder!, text: $txt)
             }
             .padding()
         }
@@ -31,5 +41,5 @@ public struct TxtField: View {
 }
 
 #Preview {
-    TxtField(placeholder: "E-mail", icon: "emailDark")
+    TxtField(placeholder: "E-mail", icon: "emailDark", txt: "")
 }

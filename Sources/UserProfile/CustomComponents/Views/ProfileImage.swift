@@ -9,12 +9,18 @@ import SwiftUI
 
 public struct ProfileImage: View {
 
-    @State var img : String!
+    var img : String? = "userProfile"
     var size : CGFloat? = 100
+
+
+    public init(img: String? = "userProfile", size: CGFloat? = 100) {
+        self.img = img
+        self.size = size
+    }
 
     public var body: some View {
         ZStack {
-            Image(img, bundle: .module)
+            Image(img!, bundle: .module)
                 .resizable()
                 .frame(width: size!, height: size!)
                 .aspectRatio(contentMode: .fit)

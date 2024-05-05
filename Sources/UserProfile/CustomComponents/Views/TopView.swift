@@ -8,7 +8,12 @@
 import SwiftUI
 
 public struct TopView: View {
-    var img : String!
+    var img : String? = ""
+
+    public init(img: String? = "userProfile") {
+        self.img = img
+    }
+
     public var body: some View {
         GeometryReader(content: { geometry in
             ZStack{
