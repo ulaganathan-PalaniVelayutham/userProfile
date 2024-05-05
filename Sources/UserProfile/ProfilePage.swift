@@ -8,13 +8,13 @@
 import SwiftUI
 
 public struct ProfilePage: View {
-    var img : String!
+    var img : String? = "userProfile"
     @State var userName : String = ""
     @State var email : String = ""
     @State var mobile : String = ""
     public var body: some View {
         VStack {
-            TopView(img: img)
+            TopView(img: img!)
                 .frame(height: 300)
                 .padding(.bottom)
             TxtField(placeholder: "User Name", icon: "userIcon", txt: userName)
@@ -34,5 +34,5 @@ public struct ProfilePage: View {
 }
 
 #Preview {
-    ProfilePage(img: "userProfile")
+    ProfilePage()
 }

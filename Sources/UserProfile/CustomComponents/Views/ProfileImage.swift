@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ProfileImage: View {
+public struct ProfileImage: View {
 
     @State var img : String!
     var size : CGFloat? = 100
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             Image(img, bundle: .module)
                 .resizable()

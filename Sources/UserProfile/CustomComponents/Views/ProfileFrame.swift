@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ProfileFrame: View {
+public struct ProfileFrame: View {
     var lineWidth : CGFloat? = 5.0
     var radius : CGFloat? = 20.0
-    var body: some View {
+   public var body: some View {
         RoundedRectangle(cornerRadius: radius!)
             .stroke(
                 LinearGradient(colors: [.blue, .green, .yellow, .red], startPoint: .leading, endPoint: .trailing), lineWidth: lineWidth!

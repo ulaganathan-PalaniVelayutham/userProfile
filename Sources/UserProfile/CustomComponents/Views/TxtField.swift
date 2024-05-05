@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct TxtField: View {
+public struct TxtField: View {
     var placeholder: String
     var icon: String? = ""
     @State var txt : String = ""
-    var body: some View {
+    public var body: some View {
         ZStack {
             HStack{
                 Image(icon!, bundle: .module)

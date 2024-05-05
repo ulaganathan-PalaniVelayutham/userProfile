@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TopView: View {
+public struct TopView: View {
     var img : String!
-    var body: some View {
+    public var body: some View {
         GeometryReader(content: { geometry in
             ZStack{
                 TopBackgroundImg(backgroundImage: img)

@@ -8,8 +8,8 @@
 import SwiftUI
 
 
-struct polygon : Shape {
-    func path(in rect: CGRect) -> Path {
+public struct polygon : Shape {
+    public func path(in rect: CGRect) -> Path {
 
         var xPos : CGFloat = 0
         var yPos : CGFloat = rect.height * 0.75
