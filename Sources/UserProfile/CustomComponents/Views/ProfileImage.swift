@@ -9,24 +9,23 @@ import SwiftUI
 
 public struct ProfileImage: View {
 
-    @State var img : Image? = Image("userProfile", bundle: Constants.appConstants.bundle)
+    @Binding var img : Image
     var size : CGFloat? = 100
-    private var b : Bundle = Bundle.module
 
 
-    public init(img: Image? = Image("userProfile", bundle: Constants.appConstants.bundle), size: CGFloat? = 100) {
-        self.img = img
+
+    public init(img: Binding<Image> = .constant(Image("userProfile", bundle: Constants.appConstants.bundle)), size: CGFloat? = 100) {
+        self._img = img
         self.size = size
     }
 
     public var body: some View {
         VStack {
-            if img != nil {
-                img!.resizable()
+                $img.wrappedValue
+                .resizable()
                 .frame(width: size!, height: size!)
                 .aspectRatio(contentMode: .fit)
                 .padding(20)
-            }
         }
         .background(
             ProfileFrame(lineWidth: 10.0)
@@ -36,5 +35,5 @@ public struct ProfileImage: View {
 }
 
 #Preview {
-    ProfileImage(img: Image("DhoniProfile", bundle:Constants.appConstants.bundle), size: 100)
+    ProfileImage(img: .constant(Image("userProfile", bundle: Constants.appConstants.bundle)), size: 100)
 }

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct TopBackgroundImg: View {
-    @State var backgroundImage : Image?
+    @Binding var backgroundImage : Image
     var body: some View {
         ZStack{
-            if backgroundImage != nil {
-                backgroundImage!.resizable()
-                    .aspectRatio(contentMode: .fit)
+            $backgroundImage.wrappedValue
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                     .blur(radius: 7)
-            }
 
             OverlayView(opacity: 0.8)
             GeometryReader{ geomtry in
@@ -39,5 +38,5 @@ struct TopBackgroundImg: View {
 }
 
 #Preview {
-    TopBackgroundImg(backgroundImage: Image("userProfile", bundle: .module))
+    TopBackgroundImg(backgroundImage: .constant(Image("userProfile", bundle: Constants.appConstants.bundle)))
 }
