@@ -8,9 +8,9 @@
 import SwiftUI
 
 public struct TopView: View {
-    var img : String? = "userProfile"
+    @State var img : Image? = Image("userProfile", bundle: Constants.appConstants.bundle)
 
-    public init(img: String? = "userProfile") {
+    public init(img: Image? = Image("userProfile", bundle: Constants.appConstants.bundle)) {
         self.img = img
     }
 
@@ -29,5 +29,5 @@ public struct TopView: View {
 }
 
 #Preview {
-    TopView(img: "DhoniProfile")
+    TopView(img: Image("DhoniProfile", bundle: .module))
 }
