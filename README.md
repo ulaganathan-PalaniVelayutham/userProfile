@@ -14,7 +14,9 @@ Usage:
 
 1. Import the package UserProfile where you want to use it.
 2. Create the view inside you page by passing an Image object to the view like below.
-    ProfilePage(img: myImage)
+
+             ProfilePage(img: myImage)
+             
 3. This is to render the entire page.
 4. you can also render other components of the page separately in your project.
 
