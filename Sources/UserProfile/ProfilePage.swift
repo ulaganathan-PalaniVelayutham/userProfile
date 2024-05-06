@@ -8,10 +8,10 @@
 import SwiftUI
 
 public struct ProfilePage: View {
-    @State var img : Image = Image("userProfile", bundle: Constants.appConstants.bundle)
-    @State var userName : String? = ""
-    @State var email : String? = ""
-    @State var mobile : String? = ""
+    @State public var img : Image = Image("userProfile", bundle: Constants.appConstants.bundle)
+    @State public var userName : String? = ""
+    @State public var email : String? = ""
+    @State public var mobile : String? = ""
 
     public init(img: Image = Image("userProfile", bundle: Constants.appConstants.bundle), userName: String? = "", email: String? = "", mobile: String? = "") {
         self.img = img
