@@ -8,16 +8,16 @@
 import SwiftUI
 
 public struct ProfilePage: View {
-    @State public var img : Image = Image("userProfile", bundle: Constants.appConstants.bundle)
-    @State public var userName : String? = ""
-    @State public var email : String? = ""
-    @State public var mobile : String? = ""
+    @Binding public var img : Image
+    @Binding public var userName : String?
+    @Binding public var email : String?
+    @Binding public var mobile : String?
 
-    public init(img: Image = Image("userProfile", bundle: Constants.appConstants.bundle), userName: String? = "", email: String? = "", mobile: String? = "") {
-        self.img = img
-        self.userName = userName
-        self.email = email
-        self.mobile = mobile
+    public init(img: Binding<Image>, userName: Binding<String?> = Binding.constant(""), email: Binding<String?> = Binding.constant(""), mobile: Binding<String?> = Binding.constant("")) {
+        self._img = img
+        self._userName = userName
+        self._email = email
+        self._mobile = mobile
     }
 
     public var body: some View {
@@ -25,9 +25,9 @@ public struct ProfilePage: View {
             TopView(img: $img)
                 .frame(height: 300)
                 .padding(.bottom)
-            TxtField(placeholder: "User Name", icon: "userIcon", txt: userName!)
-            TxtField(placeholder: "E-mail", icon: "emailDark", txt: email!)
-            TxtField(placeholder: "Mobile", icon: "mobileDark" ,txt: mobile!)
+            TxtField(placeholder: "User Name", icon: "userIcon", txt: $userName.wrappedValue!)
+            TxtField(placeholder: "E-mail", icon: "emailDark", txt: $email.wrappedValue!)
+            TxtField(placeholder: "Mobile", icon: "mobileDark" ,txt: $mobile.wrappedValue!)
             Button("Submit") {
                 submitTapped()
             }
@@ -44,5 +44,5 @@ public struct ProfilePage: View {
 }
 
 #Preview {
-    ProfilePage(img: Image("userProfile", bundle: Constants.appConstants.bundle))
+    ProfilePage(img:.constant(Image("DhoniProfile", bundle: Constants.appConstants.bundle)))
 }
