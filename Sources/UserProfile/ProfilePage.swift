@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+protocol submitProtocol {
+    func submit (userName : String, email: String, mobile: String)
+}
+
 public struct ProfilePage: View {
     @Binding public var img : Image
     @Binding public var userName : String?
     @Binding public var email : String?
     @Binding public var mobile : String?
+    var profileDegate : submitProtocol?
 
     public init(img: Binding<Image>, userName: Binding<String?> = Binding.constant(""), email: Binding<String?> = Binding.constant(""), mobile: Binding<String?> = Binding.constant("")) {
         self._img = img
@@ -37,9 +42,7 @@ public struct ProfilePage: View {
     }
 
     func submitTapped () {
-        print(userName!)
-        print(email!)
-        print(mobile!)
+        profileDegate?.submit(userName: userName!, email: email!, mobile: mobile!)
     }
 }
 
