@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol submitProtocol {
+public protocol submitProtocol {
     func submit (userName : String, email: String, mobile: String)
 }
 
